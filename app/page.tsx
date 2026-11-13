@@ -1,16 +1,31 @@
 import Link from 'next/link';
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1>Welcome to My Next.js App</h1>
-      <p>This is the home page.</p>
-      <img src="us.jpg" alt="Us" className="w-100 h-auto"></img>
-      
-      {/* Navigation link */}
-      <Link href="/about" style={{ color: "blue", textDecoration: "underline" }}>
-        Go to About Page &rarr;
-      </Link>
-    </main>
+    <>
+      <Navbar />
+
+      <main>
+        {/* We'll build the forest hero here next */}
+
+        <section
+          id="pathway"
+          style={{
+            minHeight: "80vh",
+            padding: "100px 30px",
+            textAlign: "center",
+            background: "#F5F1E6",
+          }}
+        >
+          <h1>Welcome to Stability Pathway</h1>
+          <p>Your journey toward stability starts here.</p>
+        </section>
+
+        <section id="organizations">
+          {/* Organization directory will go here */}
+        </section>
+      </main>
+    </>
   );
 }
