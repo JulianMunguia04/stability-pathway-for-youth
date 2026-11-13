@@ -1,19 +1,53 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
 @import "tailwindcss";
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --forest-dark: #183d2b;
+  --forest-green: #315b40;
+  --forest-light: #547653;
+  --sage: #a8be98;
+  --cream: #f5f1e6;
+  --card-cream: #f8f6ef;
+  --stone: #b6ad98;
+  --text-muted: #657060;
 }
 
+* {
+  box-sizing: border-box;
+}
 
-/* BRAND */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--background);
+  background-image: url("/background-alt.png");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
+  background-attachment: scroll;
+  color: var(--foreground);
+  margin: 0;
+}
+
+/* =========================================
+   BRAND
+========================================= */
 
 .brand-logo {
   display: flex;
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #f5f1e6;
+  color: var(--cream);
 }
 
 .brand-mark {
@@ -41,7 +75,9 @@
   color: #bdcdb4;
 }
 
-/* HEADER */
+/* =========================================
+   HEADER / DESKTOP NAVIGATION
+========================================= */
 
 .site-header {
   position: sticky;
@@ -71,7 +107,7 @@
 }
 
 .nav-link {
-  color: #f5f1e6;
+  color: var(--cream);
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
@@ -89,6 +125,7 @@
 
 .nav-dropdown summary {
   list-style: none;
+  cursor: pointer;
 }
 
 .nav-dropdown summary::-webkit-details-marker {
@@ -107,7 +144,7 @@
   min-width: 240px;
   padding: 10px;
 
-  background: #f5f1e6;
+  background: var(--cream);
   border-radius: 12px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
   border: 1px solid #e0ddcf;
@@ -124,7 +161,7 @@
   padding: 11px 12px;
   border-radius: 7px;
 
-  color: #315b40;
+  color: var(--forest-green);
   text-decoration: none;
   font-size: 13px;
 
@@ -141,7 +178,9 @@
   font-weight: 700;
 }
 
-/* MOBILE NAVIGATION */
+/* =========================================
+   MOBILE NAVIGATION
+========================================= */
 
 .mobile-nav {
   display: none;
@@ -187,7 +226,7 @@
   .mobile-nav summary span {
     width: 23px;
     height: 2px;
-    background: #f5f1e6;
+    background: var(--cream);
     border-radius: 5px;
   }
 
@@ -202,14 +241,14 @@
     flex-direction: column;
     gap: 5px;
 
-    background: #f5f1e6;
+    background: var(--cream);
     border-radius: 12px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
   }
 
   .mobile-menu a {
     padding: 12px;
-    color: #315b40;
+    color: var(--forest-green);
     text-decoration: none;
     border-radius: 6px;
     font-size: 14px;
@@ -217,5 +256,710 @@
 
   .mobile-menu a:hover {
     background: #e5eadf;
+  }
+}
+
+/* =========================================
+   INTRODUCTION CARD
+========================================= */
+
+.intro-section {
+  min-height: 85vh;
+  padding: 100px 24px 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+}
+
+.intro-card {
+  width: 100%;
+  max-width: 610px;
+  min-height: 520px;
+  padding: 65px 55px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: #f8f5ec;
+  border: 1px solid #d6dacb;
+  border-radius: 24px;
+
+  box-shadow: 0 15px 45px rgba(37, 62, 42, 0.09);
+}
+
+.intro-emblem svg {
+  width: 85px;
+  height: 85px;
+  margin-bottom: 24px;
+}
+
+.intro-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #78916d;
+  margin-bottom: 20px;
+}
+
+.intro-card h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.15;
+  font-weight: 500;
+  color: #244631;
+  margin: 0;
+}
+
+.intro-divider {
+  width: 65px;
+  height: 2px;
+  background: #b3c2a4;
+  margin: 28px 0;
+}
+
+.intro-card p {
+  max-width: 430px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
+.intro-card .intro-emphasis {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #78916d;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* =========================================
+   FOREST PATHWAY SECTION
+========================================= */
+
+.forest-pathway {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 24px 110px;
+  background: transparent;
+}
+
+/* =========================================
+   PATHWAY CONTAINER
+========================================= */
+
+.pathway-container {
+  position: relative;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.pathway-stages {
+  display: flex;
+  flex-direction: column;
+}
+
+.pathway-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================================
+   RESOURCE CARDS
+========================================= */
+
+.pathway-card {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+
+  width: 76%;
+  min-height: 290px;
+  overflow: hidden;
+
+  background: var(--card-cream);
+  border: 1px solid rgba(49, 91, 64, 0.15);
+  border-radius: 22px;
+
+  box-shadow: 0 12px 35px rgba(32, 56, 39, 0.08);
+
+  opacity: 0.78;
+  transform: scale(0.985);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease,
+    box-shadow 0.65s ease,
+    border-color 0.65s ease;
+}
+
+.pathway-card.is-active {
+  opacity: 1;
+  transform: scale(1);
+
+  border-color: rgba(49, 91, 64, 0.45);
+  box-shadow: 0 18px 45px rgba(32, 56, 39, 0.16);
+}
+
+.card-left {
+  align-self: flex-start;
+}
+
+.card-right {
+  align-self: flex-end;
+}
+
+/* =========================================
+   RESOURCE CARD VISUAL
+========================================= */
+
+.stage-visual {
+  position: relative;
+
+  display: flex;
+  min-height: 290px;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      ellipse at 30% 25%,
+      rgba(225, 235, 204, 0.65),
+      transparent 35%
+    ),
+    linear-gradient(145deg, #547653, #234a35 75%);
+}
+
+.stage-visual::before,
+.stage-visual::after {
+  position: absolute;
+  content: "";
+  border: 1px solid rgba(245, 241, 230, 0.2);
+  border-radius: 50%;
+}
+
+.stage-visual::before {
+  top: -90px;
+  left: -60px;
+  width: 190px;
+  height: 190px;
+}
+
+.stage-visual::after {
+  right: -100px;
+  bottom: -100px;
+  width: 260px;
+  height: 260px;
+}
+
+.stage-icon {
+  position: relative;
+  z-index: 1;
+
+  font-size: 5rem;
+
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+}
+
+.stage-number {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+
+  color: rgba(245, 241, 230, 0.8);
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.visual-caption {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+
+  color: rgba(245, 241, 230, 0.75);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+/* =========================================
+   RESOURCE CARD CONTENT
+========================================= */
+
+.stage-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 38px 36px;
+}
+
+.stage-label {
+  color: #7b8c6e;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.stage-content h3 {
+  margin: 12px 0;
+
+  color: var(--forest-dark);
+  font-family: Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.stage-content p {
+  margin: 0;
+
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.stage-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.stage-categories span {
+  padding: 7px 11px;
+
+  color: #496348;
+  background: #e8eddf;
+
+  border-radius: 20px;
+  font-size: 0.7rem;
+}
+
+.stage-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 24px;
+
+  color: var(--forest-green);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.stage-link:hover {
+  gap: 13px;
+  color: var(--forest-dark);
+}
+
+.stage-link:focus-visible {
+  outline: 3px solid #8ba879;
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+/* =========================================
+   INDIVIDUAL STONE CONNECTORS
+========================================= */
+
+.stone-connector {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 145px;
+
+  flex-shrink: 0;
+}
+
+/* Reverse every second trail curve. */
+
+.stone-connector.trail-left {
+  transform: scaleX(-1);
+}
+
+/* Individual stones */
+
+.path-stone {
+  position: absolute;
+  display: block;
+
+  width: 23px;
+  height: 15px;
+
+  background: var(--stone);
+  border: 2px solid rgba(119, 111, 91, 0.25);
+
+  border-radius: 48% 52% 42% 58% / 55% 45% 55% 45%;
+
+  opacity: 0.42;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--stone-rotation));
+
+  box-shadow:
+    0 3px 5px rgba(40, 50, 35, 0.12),
+    inset 0 2px 2px rgba(255, 255, 255, 0.35);
+
+  transition:
+    background 0.5s ease,
+    opacity 0.5s ease,
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+/* Natural stone shape variations */
+
+.path-stone:nth-child(2n) {
+  width: 18px;
+  height: 13px;
+}
+
+.path-stone:nth-child(3n) {
+  width: 27px;
+  height: 17px;
+}
+
+.path-stone:nth-child(4n) {
+  width: 15px;
+  height: 12px;
+}
+
+/* Activated stones */
+
+.path-stone.is-active {
+  background: #e9e3cf;
+  border-color: #a6b396;
+  opacity: 1;
+
+  box-shadow:
+    0 4px 9px rgba(40, 50, 35, 0.18),
+    inset 0 2px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   INTRODUCTION CARD POSITIONING
+========================================= */
+
+.pathway-introduction {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pathway-intro-card {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 610px;
+  min-height: 520px;
+
+  margin: 0 auto;
+
+  opacity: 0.85;
+  transform: scale(0.985);
+
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease,
+    box-shadow 0.65s ease,
+    border-color 0.65s ease;
+}
+
+.pathway-intro-card.is-active {
+  opacity: 1;
+  transform: scale(1);
+
+  border-color: rgba(49, 91, 64, 0.45);
+  box-shadow: 0 18px 45px rgba(32, 56, 39, 0.16);
+}
+
+/* Space between intro card and first resource stage */
+
+.pathway-introduction + .stone-connector {
+  height: 170px;
+}
+
+/* =========================================
+   PATHWAY ENDING
+========================================= */
+
+.pathway-ending {
+  position: relative;
+  z-index: 2;
+
+  margin: 40px auto 0;
+  text-align: center;
+}
+
+.pathway-ending span {
+  font-size: 2.5rem;
+}
+
+.pathway-ending p {
+  color: #496348;
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 768px) {
+  .forest-pathway {
+    padding: 75px 18px;
+  }
+
+  .pathway-card {
+    grid-template-columns: 1fr;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .stage-visual {
+    min-height: 170px;
+  }
+
+  .stage-icon {
+    font-size: 3.5rem;
+  }
+
+  .stage-content {
+    padding: 28px 24px;
+  }
+
+  .stone-connector {
+    height: 95px;
+  }
+
+  .path-stone {
+    width: 19px;
+    height: 13px;
+  }
+
+  .pathway-intro-card {
+    min-height: 460px;
+    padding: 45px 25px;
+  }
+
+  .pathway-introduction + .stone-connector {
+    height: 110px;
+  }
+
+  .pathway-ending {
+    margin-top: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro-section {
+    padding: 65px 20px 90px;
+    min-height: auto;
+  }
+
+  .intro-card {
+    min-height: 460px;
+    padding: 45px 25px;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY: REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .pathway-card,
+  .pathway-intro-card,
+  .path-stone,
+  .stage-link {
+    transition: none;
+  }
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.site-footer {
+  position: relative;
+  width: 100%;
+  background: #594431;
+  color: #F5F1E6;
+  padding: 65px 30px 25px;
+  margin-top: 0;
+  border-top: 5px solid #79634B;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+  gap: 45px;
+  padding-bottom: 50px;
+}
+
+.footer-brand h2 {
+  font-family: Georgia, serif;
+  font-size: 27px;
+  margin-bottom: 16px;
+  color: #F5F1E6;
+}
+
+.footer-brand p,
+.footer-contact p {
+  color: #E0D7C7;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 280px;
+}
+
+.footer-links,
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  color: #D7C5A5;
+  margin-bottom: 18px;
+}
+
+.footer-links a {
+  color: #E0D7C7;
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.footer-contact p {
+  margin-bottom: 20px;
+}
+
+.footer-button {
+  display: inline-block;
+  padding: 11px 20px;
+  background: #A8B99A;
+  color: #243D2D;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.footer-button:hover {
+  background: #C3D0B7;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(245, 241, 230, 0.2);
+  padding-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-bottom p {
+  color: #CFC3B1;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Responsive footer */
+@media (max-width: 850px) {
+  .footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+  .site-footer {
+    padding: 45px 24px 22px;
+  }
+
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-links a,
+  .footer-button {
+    transition: none;
   }
 }
