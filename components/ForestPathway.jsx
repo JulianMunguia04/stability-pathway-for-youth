@@ -66,7 +66,7 @@ const stages = [
     description:
       "Explore housing programs that can help you move toward a safer and more stable living situation.",
     categories: ["Housing Programs", "Housing Support"],
-    slug: "transitional-housing",
+    slug: "housing",
     icon: "🏡",
   },
   {
